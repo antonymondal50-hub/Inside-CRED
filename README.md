@@ -29,10 +29,3 @@ Files in this Repository
 README.md: This file.
 
 index.html: The complete, self-contained dashboard with all HTML, CSS, and JavaScript.
-
-LICENSE: The MIT License for this project.
-
-.gitignore: Specifies files and directories to be ignored by Git.
-
-Author
-[Your Name] [Link to your LinkedIn Profile] [Link to your personal website or portfolio]
