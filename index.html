@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRED Product Analytics Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .container {
+            max-width: 1000px;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8 flex justify-center items-start min-h-screen">
+    <div class="container mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">CRED: The Business of Trust</h1>
+            <p class="text-lg text-gray-600">A Product Analyst's reverse-engineered dashboard</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1: Revenue -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-2 text-green-500">💰</span> Estimated Revenue (FY24)
+                </h2>
+                <div class="text-3xl font-bold text-gray-900">
+                    ₹2,473 Cr
+                </div>
+                <p class="text-sm text-gray-500 mt-2">
+                    <span class="text-green-500 font-medium">↑ 66% YoY</span>. Driven by lending, payments & merchant services.
+                </p>
+                <p class="text-xs text-gray-400 mt-4 italic">Source: Public financial reports.</p>
+            </div>
+
+            <!-- Card 2: Operating Loss -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-2 text-red-500">📉</span> Operating Loss (FY24)
+                </h2>
+                <div class="text-3xl font-bold text-gray-900">
+                    ₹609 Cr
+                </div>
+                <p class="text-sm text-gray-500 mt-2">
+                    <span class="text-green-500 font-medium">↓ 41% YoY</span>. Indicates improved unit economics and cost control.
+                </p>
+                <p class="text-xs text-gray-400 mt-4 italic">Source: Public financial reports.</p>
+            </div>
+
+            <!-- Card 3: Monthly Transacting Users -->
+            <div class="bg-white rounded-xl p-6 card-shadow">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-2 text-blue-500">👥</span> Monthly Transacting Users (MTU)
+                </h2>
+                <div class="text-3xl font-bold text-gray-900">
+                    13M+
+                </div>
+                <p class="text-sm text-gray-500 mt-2">
+                    <span class="text-green-500 font-medium">↑ 34% YoY</span>. Reflects continued growth of the exclusive user base.
+                </p>
+                <p class="text-xs text-gray-400 mt-4 italic">Source: Public reports from the company.</p>
+            </div>
+
+            <!-- Card 4: Revenue Streams & Breakup -->
+            <div class="bg-white rounded-xl p-6 card-shadow col-span-1 md:col-span-2">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-2 text-purple-500">📊</span> Revenue Streams (Our Model's Estimation)
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+                    <div>
+                        <div class="text-2xl font-bold text-gray-900">~60%</div>
+                        <p class="text-sm text-gray-600">Lending & Financial Services</p>
+                        <p class="text-xs text-gray-400 mt-1 italic">(CRED Cash, Mint)</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-gray-900">~25%</div>
+                        <p class="text-sm text-gray-600">Payments & Convenience Fees</p>
+                        <p class="text-xs text-gray-400 mt-1 italic">(RentPay, Utility Bills)</p>
+                    </div>
+                    <div>
+                        <div class="text-2xl font-bold text-gray-900">~15%</div>
+                        <p class="text-sm text-gray-600">E-commerce & Brand Partnerships</p>
+                        <p class="text-xs text-gray-400 mt-1 italic">(CRED Store, Rewards)</p>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-400 mt-4 italic">Source: Estimated from public commentary and business models.</p>
+            </div>
+
+            <!-- Card 5: LTV & CAC -->
+            <div class="bg-white rounded-xl p-6 card-shadow col-span-1 md:col-span-1">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-2 text-yellow-500">📈</span> LTV:CAC Ratio
+                </h2>
+                <div class="text-3xl font-bold text-gray-900">
+                    <span id="ltv-cac-ratio">3.0x</span>
+                </div>
+                <p class="text-sm text-gray-500 mt-2">
+                    Our model estimates a positive LTV:CAC ratio, indicating healthy unit economics.
+                </p>
+                <p class="text-xs text-gray-400 mt-4 italic">Source: Calculated based on estimated ARPU and declining CAC.</p>
+            </div>
+            
+            <!-- Card 6: Project Notes & Assumptions -->
+            <div class="bg-white rounded-xl p-6 card-shadow col-span-1 lg:col-span-3">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                    <span class="mr-2 text-indigo-500">📝</span> Project Notes & Assumptions
+                </h2>
+                <ul class="list-disc list-inside text-gray-600 space-y-2">
+                    <li>All financial figures are based on publicly available data, news reports, and are estimations.</li>
+                    <li>This analysis is a case study to demonstrate product sense and analytical skills, not a definitive financial report.</li>
+                    <li>The model assumes that CRED's focus on a high-credit-score user base leads to a higher Average Revenue Per User (ARPU) and lower churn.</li>
+                    <li>The path to profitability is driven by the network effect and brand flywheel, which reduces the need for expensive marketing campaigns.</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="text-center text-gray-500 mt-10 text-sm">
+            <p>&copy; 2024 Product Analytics Case Study. All Rights Reserved.</p>
+            <p class="mt-2">Disclaimer: This dashboard is for educational purposes only and is not official financial data.</p>
+        </footer>
+    </div>
+</body>
+</html>
